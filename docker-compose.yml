@@ -1,0 +1,16 @@
+# Use root/example as user/password credentials
+version: '2.0'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: machinesrent
+        MYSQL_DATABASE: machinesrent
+        MYSQL_USER: machinesrent
+        MYSQL_PASSWORD: machinesrent 
+    ports:
+            - "3307:3306"
